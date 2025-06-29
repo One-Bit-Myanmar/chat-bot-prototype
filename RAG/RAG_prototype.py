@@ -39,7 +39,7 @@ def retrieve_query (question,index,embedding_model,chunks,top_chunk = 3):
 
 def LLM (questions,relevant_chunks):
    # Setup
-   api_key = "AIzaSyBE8CLVJaM28hVyyPK92ycpjgars5DCImI"
+   api_key = "GOOGLE API KEY"
    genai.configure(api_key = api_key)
    model = genai.GenerativeModel("gemini-2.0-flash")
 
