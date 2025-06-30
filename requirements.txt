@@ -3,7 +3,7 @@ fasttext-wheel
 gensim
 ollama
 google-genai
-fitz
+PyMuPDF
 faiss-cpu # faiss-gpu if you have gpu
 langchain-text-splitters 
 langchain-community 
