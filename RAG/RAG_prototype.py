@@ -1,14 +1,14 @@
 import faiss
 import fitz  # PyMuPDF
 from sentence_transformers import SentenceTransformer
-import google as genai
+import google.generativeai as genai
 
 class RAGPipeline:
     def __init__(self, embedding_model_name="all-MiniLM-L6-v2", api_key="GOOGLE API KEY"):
         self.embedding_model = SentenceTransformer(embedding_model_name)
         self.api_key = api_key
         genai.configure(api_key=self.api_key)
-        self.model = genai.GenerativeModel("gemini-2.0-flash")
+        self.model = genai.GenerativeModel("gemini-2.5-pro")
 
     def read_pdf(self, pdf_paths):
         texts = []
@@ -59,3 +59,13 @@ class RAGPipeline:
         relevant_chunks = self.retrieve_query(question, index, chunks_map)
         answer = self.LLM(question, relevant_chunks)
         return answer
+    
+    
+if __name__ == "__main__":
+    pdf_path = ["books/CyBOK.pdf"]
+    question = "what is ramsomware"
+    
+    pipeline = RAGPipeline(api_key="Your key")
+    answer = pipeline.run(pdf_path, question)
+    print(answer)
+
