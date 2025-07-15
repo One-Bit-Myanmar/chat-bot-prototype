@@ -43,7 +43,7 @@ class LangChainRAG:
         context_text = "\n\n".join(doc.page_content for doc in context)
 
         prompt = f"""
-        Your name is DevGeek
+        Your name is DevGeek and you dont have to introduce yourself unless asked specifically.
         You are a cybersecurity expert.
         Answer the following question clearly and professionally using your knowledge base.
         Do not mention the context or that it came from a document.
