@@ -13,3 +13,5 @@ langchain-core
 sentence-transformers
 nltk
 hf_xet
+matplotlib
+seaborn
